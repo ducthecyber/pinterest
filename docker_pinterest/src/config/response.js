@@ -2,7 +2,7 @@
 const successCode = (res, data, message) => {
     res.status(200).json({
         message,
-        accessToken: data
+        content: data
     });
 }
 

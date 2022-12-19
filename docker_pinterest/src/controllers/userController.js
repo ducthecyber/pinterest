@@ -58,7 +58,12 @@ const login = async (req,res)=>{
             //true=>khớp
             if(checkLogin.mat_khau === mat_khau){
                 // console.log(parseToken(checkLogin));
-                successCode(res,parseToken(checkLogin),"Login thành công");
+                return res.status(200).send({
+                    message:"Login thành công",
+                    statusCode:200,
+                    accessToken:parseToken(checkLogin)
+                })
+                // successCode(res,parseToken(checkLogin),"Login thành công");
             }
             else{
                 failCode(res,"","Mật khẩu không đúng");
