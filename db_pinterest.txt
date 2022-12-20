@@ -1,0 +1,88 @@
+CREATE TABLE nguoi_dung (
+	nguoi_dung_id INT PRIMARY KEY AUTO_INCREMENT,
+	email VARCHAR (255),
+	mat_khau VARCHAR (255),
+	ho_ten VARCHAR (255),
+	tuoi INT,
+	anh_dai_dien VARCHAR (255),
+)
+
+
+CREATE TABLE hinh_anh(
+	id INT AUTO_INCREMENT,
+-- 	hinh_id INT PRIMARY KEY,
+	ten_hinh VARCHAR (255),
+	duong_dan VARCHAR (255),
+	mo_ta VARCHAR (255),
+	tuoi INT
+)
+
+CREATE TABLE hinh_anh(
+	hinh_id INT PRIMARY KEY AUTO_INCREMENT,
+	ten_hinh VARCHAR (255),
+	duong_dan VARCHAR (255),
+	mo_ta VARCHAR (255),
+	tuoi INT,
+	nguoi_dung_id INT,
+	
+	FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id)
+)
+
+
+INSERT INTO nguoi_dung
+VALUES (0, "steve@gmail.com","stv0","steve",20, "steve"),
+		(0,"jack@gmail.com","jac0","jack ma",22,"JM"),
+		(0,"michael@gmail.com","mic0","michael hyatt",19,"HM"),
+		(0,"bolt@gmail.com","bol0","usain bolt",30,"UM"),
+		(0,"peter@gmail.com","pet0","peter anderson",23,"AD"),
+		(0,"messi@gmail.com","mes0","lionel messi",35,"LM")
+		
+
+INSERT INTO hinh_anh
+VALUES (0, "messi","https://st2.depositphotos.com/2793427/9289/i/600/depositphotos_92896546-stock-photo-lionel-messi-during-the-uefa.jpg", "argentina" ,35,8),
+		(0,"ronaldo","https://st2.depositphotos.com/1837549/7596/i/450/depositphotos_75968529-stock-photo-cristiano-ronaldo-of-real-madrid.jpg","alien man",36, 9),
+		(0,"neymar","https://st4.depositphotos.com/21607914/23445/i/450/depositphotos_234451670-stock-photo-neymar-brazil-greets-fans-his.jpg","brazil star",37,10),
+		(0,"ronaldinho","https://st.depositphotos.com/1837549/1801/i/450/depositphotos_18011001-stock-photo-brazilian-player-ronaldinho-portrait.jpg","super star",22, 11),
+		(0,"Beckham","https://st.depositphotos.com/1820166/1490/i/450/depositphotos_14901867-stock-photo-david-beckham-before-the-game.jpg","england",18,8),
+		(0,"stephan gerrad","https://st.depositphotos.com/2909987/4242/i/450/depositphotos_42428439-stock-photo-debrecen-vs-liverpool-football-game.jpg","champione league",40,12),
+		(0,"thiery henry","https://st2.depositphotos.com/3726985/5434/i/450/depositphotos_54345799-stock-photo-thierry-henry-celebrates-the-goal.jpg","barcelona",22,13)
+		
+
+CREATE TABLE luu_anh (
+		nguoi_dung_id INT,
+		hinh_id INT,
+		ngay_luu DATE,
+		
+		PRIMARY KEY (nguoi_dung_id, hinh_id),
+		FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung (nguoi_dung_id),
+		FOREIGN KEY (hinh_id) REFERENCES hinh_anh (hinh_id)
+)
+
+INSERT INTO luu_anh 
+VALUES (8, 3, "2022-10-09"),
+		(9,4,"2022-09-03"),
+		(10,5,"2022-02-04"),
+		(11,7,"2022-11-03"),
+		(12,5,"2022-12-12")
+		
+DROP TABLE luu_anh
+
+
+CREATE TABLE binh_luan (
+		nguoi_dung_id INT,
+		hinh_id INT,
+		ngay_binh_luan DATE,
+		
+		PRIMARY KEY (nguoi_dung_id, hinh_id),
+		FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung (nguoi_dung_id),
+		FOREIGN KEY (hinh_id) REFERENCES hinh_anh (hinh_id)
+)
+
+INSERT INTO binh_luan 
+VALUES (8, 8, "2022-09-06"),
+		(12,7,"2022-02-03"),
+		(9,5, "2022-11-12"),
+		(10,2,"2020-07-08"),
+		(11,6,"2018-02-05"),
+		(9,7,"2017-04-28")
+

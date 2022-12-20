@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "566d5d9c-1f33-43de-8149-0dff9c413940",
+		"name": "docker_pinterest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23736100"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"leechuntee@gmail.com\",\r\n    \"mat_khau\":\"lee123\",\r\n    \"ho_ten\":\"lee chun tee\",\r\n    \"tuoi\":39,\r\n    \"anh_dai_dien\":\"LCT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/signup",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "photoList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/home/photoList",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"photoList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photoName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/home/photoList",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"photoList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photoInfo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "photoSave",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/detail/photoSave/5",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"photoSave",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commentInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/detail/commentInfo/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"commentInfo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commentPost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"nguoi_dung_id\":8,\r\n \"hinh_id\":8,\r\n \"ngay_binh_luan\":\"2022-07-07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/detail/commentPost",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"commentPost"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
