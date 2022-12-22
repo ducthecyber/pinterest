@@ -333,7 +333,7 @@
 			"response": []
 		},
 		{
-			"name": "addPhoto",
+			"name": "uploadPhoto",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -349,18 +349,67 @@
 						{
 							"key": "dataUpload",
 							"type": "file",
-							"src": "/C:/Users/Dell/Desktop/depositphotos_234454580-stock-photo-luis-suarez-uruguay-reacts-match.jpg"
+							"src": "/C:/Users/Dell/Desktop/depositphotos_611841414-stock-photo-ferran-torres-forward-spain-action.jpg"
+						},
+						{
+							"key": "ten_hinh",
+							"value": "Ferran Torres ",
+							"type": "text"
+						},
+						{
+							"key": "mo_ta",
+							"value": "Spain",
+							"type": "text"
+						},
+						{
+							"key": "tuoi",
+							"value": "22",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "{{domain}}/photo/addPhoto/8",
+					"raw": "{{domain}}/photo/uploadPhoto/12",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"photo",
-						"addPhoto",
+						"uploadPhoto",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\":\"stevejobs@gmail.com\",\r\n    \"mat_khau\":\"stvjob123\",\r\n    \"ho_ten\":\"apple job\",\r\n    \"tuoi\":32,\r\n    \"anh_dai_dien\":\"STJ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/updateUser/8",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"updateUser",
 						"8"
 					]
 				}
