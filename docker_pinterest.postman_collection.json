@@ -7,414 +7,444 @@
 	},
 	"item": [
 		{
-			"name": "signup",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"susute@gmail.com\",\r\n    \"mat_khau\":\"susu123\",\r\n    \"ho_ten\":\"su su te\",\r\n    \"tuoi\":22,\r\n    \"anh_dai_dien\":\"SST\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/user/signup",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"user",
-						"signup"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "login",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"parkminyon@gmail.com\",\r\n    \"mat_khau\":\"$2b$10$Vxx0UyCdTW0r./td0bYCzuk3f8lKY0IbpQGDWopCX3Ezj56niAcQa\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/user/login",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"user",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "photoList",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{domain}}/home/photoList",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"home",
-						"photoList"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "photoName",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"ten_hinh\":\"Beckham\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/home/photoName",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"home",
-						"photoName"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "photoInfo",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/detail/photoInfo/5",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"detail",
-						"photoInfo",
-						"5"
-					],
-					"query": [
-						{
-							"key": "hinh_id",
-							"value": "3",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "photoSave",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/detail/photoSave/5",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"detail",
-						"photoSave",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "commentInfo",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/detail/commentInfo/8",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"detail",
-						"commentInfo",
-						"8"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "commentPost",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nguoi_dung_id\":99,\r\n    \"hinh_id\":73,\r\n     \"ngay_binh_luan\":\"2022-12-13\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/detail/commentPost",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"detail",
-						"commentPost"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "userInfo",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/photo/user",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"photo",
-						"user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "savedPhotoUserId",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/photo/saved/12",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"photo",
-						"saved",
-						"12"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "createdPhotoUserId",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/photo/created/8adsddd",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"photo",
-						"created",
-						"8adsddd"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "deletedPhoto",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{domain}}/photo/deleted/1",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"photo",
-						"deleted",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "uploadPhoto",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "dataUpload",
-							"type": "file",
-							"src": "/C:/Users/Dell/Desktop/depositphotos_611841414-stock-photo-ferran-torres-forward-spain-action.jpg"
+			"name": "LoginSignup",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"susute@gmail.com\",\r\n    \"mat_khau\":\"susu123\",\r\n    \"ho_ten\":\"su su te\",\r\n    \"tuoi\":22,\r\n    \"anh_dai_dien\":\"SST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "ten_hinh",
-							"value": "Ferran Torres ",
-							"type": "text"
-						},
-						{
-							"key": "mo_ta",
-							"value": "Spain",
-							"type": "text"
-						},
-						{
-							"key": "tuoi",
-							"value": "22",
-							"type": "text"
+						"url": {
+							"raw": "{{domain}}/user/signup",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{domain}}/photo/uploadPhoto/12",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"photo",
-						"uploadPhoto",
-						"12"
-					]
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"parkminyon@gmail.com\",\r\n    \"mat_khau\":\"$2b$10$Vxx0UyCdTW0r./td0bYCzuk3f8lKY0IbpQGDWopCX3Ezj56niAcQa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/user/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "updateUser",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n     \"email\":\"stevejobs@gmail.com\",\r\n    \"mat_khau\":\"stvjob123\",\r\n    \"ho_ten\":\"apple job\",\r\n    \"tuoi\":32,\r\n    \"anh_dai_dien\":\"STJ\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "HomePage",
+			"item": [
+				{
+					"name": "photoList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/home/photoList",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"home",
+								"photoList"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{domain}}/user/updateUser/8",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"user",
-						"updateUser",
-						"8"
-					]
+				{
+					"name": "photoName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_hinh\":\"Beckham\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/home/photoName",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"home",
+								"photoName"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "DetailPage",
+			"item": [
+				{
+					"name": "photoInfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/detail/photoInfo/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"detail",
+								"photoInfo",
+								"5"
+							],
+							"query": [
+								{
+									"key": "hinh_id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commentInfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/detail/commentInfo/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"detail",
+								"commentInfo",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photoSave",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/detail/photoSave/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"detail",
+								"photoSave",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commentPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nguoi_dung_id\":99,\r\n    \"hinh_id\":73,\r\n     \"ngay_binh_luan\":\"2022-12-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/detail/commentPost",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"detail",
+								"commentPost"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PhotoManagement",
+			"item": [
+				{
+					"name": "userInfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/photo/user",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"photo",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createdPhotoUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/photo/created/8adsddd",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"photo",
+								"created",
+								"8adsddd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savedPhotoUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/photo/saved/12",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"photo",
+								"saved",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletedPhoto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/photo/deleted/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"photo",
+								"deleted",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PhotoCreate",
+			"item": [
+				{
+					"name": "uploadPhoto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dataUpload",
+									"type": "file",
+									"src": "/C:/Users/Dell/Desktop/depositphotos_611841414-stock-photo-ferran-torres-forward-spain-action.jpg"
+								},
+								{
+									"key": "ten_hinh",
+									"value": "Ferran Torres ",
+									"type": "text"
+								},
+								{
+									"key": "mo_ta",
+									"value": "Spain",
+									"type": "text"
+								},
+								{
+									"key": "tuoi",
+									"value": "22",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/photo/uploadPhoto/12",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"photo",
+								"uploadPhoto",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserManagment",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIzLCJmdWxsX25hbWUiOiJyb25hbGRvIiwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiQyYiQxMCRIeHhOWTkxYlFENlRNZzZTSmF6RVMuZEQxTTVIUEVLM2Y2eTk1cDE4WmRxcUpVZkFnS0VGRyJ9LCJpYXQiOjE2NzAyNTgyNTYsImV4cCI6MTk4NTgzNDI1Nn0.XBc6U2-E1ZYkSOjOsWTFq38aG6MzkW3lUbRH5f2JGPY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\":\"stevejobs@gmail.com\",\r\n    \"mat_khau\":\"stvjob123\",\r\n    \"ho_ten\":\"apple job\",\r\n    \"tuoi\":32,\r\n    \"anh_dai_dien\":\"STJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/user/updateUser/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"updateUser",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

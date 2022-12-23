@@ -1,7 +1,7 @@
 const sequelize = require('../models/index');
 const init_models = require('../models/init-models');
 const model = init_models(sequelize);
-const { successCode, failCode, errorCode } = require("../config/response");
+const { successCode, failCode, errorCode, notFoundCode } = require("../config/response");
 
 
 //xử lý chức năng
@@ -50,12 +50,22 @@ const commentInfo = async (req, res) => {
             include:
                 "hinh"
         })
-
-        if (commentInfo !== null) {
-            successCode(res, commentInfo, "Lấy thông tin comment thành công")
+        let checkId = await model.hinh_anh.findOne({
+            where: {
+                hinh_id
+            }
+        })
+        console.log("checkId", checkId)
+        if (checkId) {
+            if (commentInfo.length > 0) {
+                successCode(res, commentInfo, "Lấy thông tin comment thành công")
+            }
+            else {
+                failCode(res, `Mã hình ${hinh_id} `, "Chưa có lượt bình luận ảnh này. Bạn hãy là người đầu tiên");
+            }
         }
         else {
-            failCode(res, "", "Hình ảnh chưa có comment");
+            notFoundCode(res, "", "Mã ảnh không tồn tại")
         }
 
     }
@@ -75,13 +85,22 @@ const photoSave = async (req, res) => {
             },
 
         })
+        let checkId = await model.hinh_anh.findOne({
+            where: {
+                hinh_id
+            }
+        })
+        if (checkId) {
+            if (photoSave.length !== 0) {
+                successCode(res, photoSave, `Ảnh đã lưu bởi ${photoSave.length} người dùng`)
+            }
+            else {
+                failCode(res, "", "Người dùng chưa lưu hình này. Còn chờ gì mà không lưu vào bộ sưu tập của mình!");
+            }
 
-
-        if (photoSave.length !== 0) {
-            successCode(res, photoSave, `Ảnh đã lưu bởi ${photoSave.length} người dùng`)
         }
         else {
-            failCode(res, "", "Hình ảnh chưa được lưu hoặc không tồn tại");
+            failCode(res, "", "Hình ảnh không tồn tại");
         }
 
     }

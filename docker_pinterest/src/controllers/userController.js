@@ -90,7 +90,6 @@ const updateUser = async (req, res) => {
                 nguoi_dung_id
             }
         })
-
         let passWordHash = bcrypt.hashSync(mat_khau, 10);
 
         //TRONG 1 REQUEST, KHÔNG ĐỂ RESPONSE TRÙNG NHAU
@@ -108,7 +107,10 @@ const updateUser = async (req, res) => {
                     nguoi_dung_id
                 }
             })
-            successCode(res, checkUser, "Update thông tin người dùng thành công");
+            let editUser= await model.nguoi_dung.findOne({
+                where:{nguoi_dung_id}
+            })
+            successCode(res, editUser, "Update thông tin người dùng thành công");
         }
         else {
             failCode(res, `Mã số người dùng: ${nguoi_dung_id}`, "Người dùng không tồn tại");

@@ -13,6 +13,17 @@ const failCode = (res, data, message) => {
         content: data
     });
 }
+
+//404
+const notFoundCode = (res, data, message) => {
+    res.status(404).send(message);
+
+    // res.status(404).json({
+    //     message,
+    //     content: data
+    // });
+}
+
 //500
 const errorCode = (res,message) => {
     res.status(500).send(message);
@@ -20,5 +31,6 @@ const errorCode = (res,message) => {
 module.exports = {
     successCode,
     failCode,
-    errorCode
+    errorCode,
+    notFoundCode
 }

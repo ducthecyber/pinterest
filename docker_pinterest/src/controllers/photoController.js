@@ -28,10 +28,21 @@ const userIdSavePhoto = async (req, res) => {
                 nguoi_dung_id
             }
         })
-        if (data.length > 0) {
-            successCode(res, data, "Lấy danh sách ảnh thành công")
-        } else {
-            successCode(res, "", "Người dùng chưa lưu ảnh")
+        let checkId = await model.nguoi_dung.findOne({
+            where: {
+                nguoi_dung_id
+            }
+        })
+        if (checkId) {
+            if (data.length > 0) {
+                successCode(res, data, "Lấy danh sách ảnh thành công")
+            }
+            else {
+                failCode(res, data, "Người dùng chưa lưu ảnh")
+            }
+        }
+        else {
+            successCode(res, "", "Người dùng không tồn tại")
 
         }
         console.log(nguoi_dung_id)
@@ -50,12 +61,21 @@ const userIdCreatePhoto = async (req, res) => {
                 nguoi_dung_id
             }
         })
-        if (data.length > 0) {
-            successCode(res, data, "Lấy danh sách ảnh thành công")
-            console.log(nguoi_dung_id)
-        } else {
-            successCode(res, "", "Người dùng chưa tạo ảnh")
+        let checkId = await model.nguoi_dung.findOne({
+            where: {
+                nguoi_dung_id
+            }
+        })
+        if (checkId) {
+            if (data.length > 0) {
+                successCode(res, data, "Lấy danh sách ảnh thành công")
+                console.log(nguoi_dung_id)
+            } else {
+                successCode(res, "", "Người dùng chưa tạo ảnh")
 
+            }
+        }else{
+            failCode(res,data,"Người dùng không tồn tại")
         }
     }
     catch (err) {
@@ -122,16 +142,16 @@ const uploadPhoto = async (req, res) => {
             //phải bấm xóa đi rồi upload lại
             console.log(req.file)
             if (req.file.size >= 400000) {
-                fs.unlinkSync(process.cwd() + "/public/img/" + req.file.filename);
+                fs.unlinkSync(process.cwd() + "/src/public/img/" + req.file.filename);
                 res.send("chỉ được phép upload 4Mb");
                 return;
             }
             // console.log(req.file.mimetype)
             if (req.file.mimetype != "image/jpeg" && req.file.mimetype != "image/jpg") {
-                fs.unlinkSync(process.cwd() + "/public/img/" + req.file.filename);
+                fs.unlinkSync(process.cwd() + "src/public/img/" + req.file.filename);
                 res.send("sai định dạng");
             }
-            fs.readFile(process.cwd() + "/public/img/" + req.file.filename, (err, data) => {
+            fs.readFile(process.cwd() + "/src/public/img/" + req.file.filename, (err, data) => {
                 // `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
 
                 // lưu database
@@ -154,7 +174,7 @@ const uploadPhoto = async (req, res) => {
                 },
                 nguoi_dung_id,
                 ten_hinh,
-                duong_dan: `localhost:8080/public/img/${req.file.filename}`,
+                duong_dan: `localhost:8080/src/public/img/${req.file.filename}`,
                 mo_ta,
                 tuoi
             })

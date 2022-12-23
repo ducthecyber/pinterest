@@ -8,14 +8,14 @@ CREATE TABLE nguoi_dung (
 )
 
 
-CREATE TABLE hinh_anh(
-	id INT AUTO_INCREMENT,
--- 	hinh_id INT PRIMARY KEY,
-	ten_hinh VARCHAR (255),
-	duong_dan VARCHAR (255),
-	mo_ta VARCHAR (255),
-	tuoi INT
-)
+-- CREATE TABLE hinh_anh(
+-- 	id INT AUTO_INCREMENT,
+-- -- 	hinh_id INT PRIMARY KEY,
+-- 	ten_hinh VARCHAR (255),
+-- 	duong_dan VARCHAR (255),
+-- 	mo_ta VARCHAR (255),
+-- 	tuoi INT
+-- )
 
 CREATE TABLE hinh_anh(
 	hinh_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -65,7 +65,7 @@ VALUES (8, 3, "2022-10-09"),
 		(11,7,"2022-11-03"),
 		(12,5,"2022-12-12")
 		
-DROP TABLE luu_anh
+-- DROP TABLE luu_anh
 
 
 CREATE TABLE binh_luan (
